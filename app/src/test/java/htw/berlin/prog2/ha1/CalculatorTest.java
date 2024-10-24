@@ -87,7 +87,21 @@ class CalculatorTest {
 
         assertEquals(expected, actual);
     }
+    @Test
+    @DisplayName("multiplication functional")
+    void testMultiplyTwoNumbers() {
+        Calculator calc = new Calculator();
 
+        calc.pressDigitKey(3);
+        calc.pressBinaryOperationKey("*");
+        calc.pressDigitKey(7);
+        calc.pressEqualsKey();
+
+        String expected = "21";
+        String actual = calc.readScreen();
+
+        assertEquals(expected, actual);
+    }
 
     //TODO hier weitere Tests erstellen
 }
